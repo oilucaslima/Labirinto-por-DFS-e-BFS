@@ -125,25 +125,26 @@ Primeiramente faz a leitura da matriz no input.data. Apartir da posição (x,y) 
      <img height="300" width="300" src="imgs/2.png" >
   </p>
 </ul>
-## Lógica:
 
+## Lógica:
 
 <p align="justify">
   Inicialmente, o arquivo denominado "input.data" é aberto para fins de leitura, e o valor correspondente ao tamanho do labirinto é obtido por meio da função tamanho_matriz, a fim de permitir a alocação dinâmica de uma matriz de structs. A matriz de structs é composta por um tipo string, onde reside o elemento da matriz, e um tipo int, onde é armazenado o índice da matriz. Para preencher a matriz com todos os elementos do arquivo e iniciar os índices com "0", utiliza-se a função leitura_arquivo_2. Após recarregar a matriz, a função caminhar_largura é chamada, com os parâmetros de tamanho e matriz. Essa função executa todo o processo de busca. Primeiramente, é criada uma fila, utilizada como controle dos elementos visitados, na qual as coordenadas iniciais da matriz (0,0) são inseridas. Enquanto o objetivo da busca não é alcançado, um loop "while" realiza os seguintes procedimentos:
 </p>
 
 
-- Os elementos da fila são acessados um por um, e todos os vizinhos correspondentes são verificados. Caso o vizinho tenha um índice igual a "0", suas coordenadas são adicionadas ao final da fila. Após cada inserção, o índice do vizinho é atualizado para "1". A verificação e atualização do índice é importante para que não ocorra a inserção de coordenadas que já foram verificadas anteriormente na fila.<br>
-- Após todos os vizinhos dos elementos previamente presentes na fila serem adicionados, a matriz é direcionada para esses vizinhos, e eles são removidos da fila, tendo seus índices modificados para "2".
-- Esse processo é realizado com o auxílio de dois contadores adicionais, que registram a quantidade de elementos presentes na fila antes e após a adição de todos os vizinhos, permitindo a execução desse processo em um segundo loop utilizando esses contadores como parâmetros.
-- Se a coordenada removida da fila possuir um elemento comum igual a "1", a posição correspondente é percorrida, atualizando-se a linha e coluna da matriz para essa posição.
-- Se a coordenada removida da fila representar um perigo, o elemento é atualizado para "1", e as variáveis relevantes são todas zeradas: as linhas e colunas, tanto auxiliares quanto oficiais, os contadores, os índices dos elementos (utilizando a função `reiniciar_indices`), e a fila. Em seguida, a coordenada (0,0) é novamente adicionada à fila, para reiniciar a busca a partir da origem, sem o perigo na posição em que foi encontrado anteriormente.
-- Se a coordenada removida da fila corresponder a uma parede, ela é simplesmente removida da fila, sem direcionar a linha e coluna para essa posição.
-- Se a coordenada removida da fila for o objetivo da busca (representado por "?"), sua posição é percorrida e o loop é encerrado.
+<ul align="justify">
+  <li>Os elementos da fila são acessados um por um, e todos os vizinhos correspondentes são verificados. Caso o vizinho tenha um índice igual a "0", suas coordenadas são adicionadas ao final da fila. Após cada inserção, o índice do vizinho é atualizado para "1". A verificação e atualização do índice é importante para que não ocorra a inserção de coordenadas que já foram verificadas anteriormente na fila.</li>
+  <li>Após todos os vizinhos dos elementos previamente presentes na fila serem adicionados, a matriz é direcionada para esses vizinhos, e eles são removidos da fila, tendo seus índices modificados para "2".</li>
+  <li>Esse processo é realizado com o auxílio de dois contadores adicionais, que registram a quantidade de elementos presentes na fila antes e após a adição de todos os vizinhos, permitindo a execução desse processo em um segundo loop utilizando esses contadores como parâmetros.</li>
+  <li>Se a coordenada removida da fila possuir um elemento comum igual a "1", a posição correspondente é percorrida, atualizando-se a linha e coluna da matriz para essa posição.</li>
+  <li>Se a coordenada removida da fila representar um perigo, o elemento é atualizado para "1", e as variáveis relevantes são todas zeradas: as linhas e colunas, tanto auxiliares quanto oficiais, os contadores, os índices dos elementos (utilizando a função `reiniciar_indices`), e a fila. Em seguida, a coordenada (0,0) é novamente adicionada à fila, para reiniciar a busca a partir da origem, sem o perigo na posição em que foi encontrado anteriormente.</li>
+  <li>Se a coordenada removida da fila corresponder a uma parede, ela é simplesmente removida da fila, sem direcionar a linha e coluna para essa posição.</li>
+  <li>Se a coordenada removida da fila for o objetivo da busca (representado por "?"), sua posição é percorrida e o loop é encerrado.</li>
+</ul>
 
 
 ## Funções
-
 
 <p align="justify">
 
@@ -195,18 +196,23 @@ A busca por profundidade ou busca DFS (Depht-fisrt search) é um processo sistem
 
 <p align="justify">
 A busca em profundidade de uma direção só é interrompida se for encontrado um obstáculo ou chegue ao limite da matriz.
-Caso isso aconteça, o código passa para a próxima direção, de acordo com a ordem de preferência estabelecida e continua o caminhamento por ela. Todas as coordenadas (x,y) percorridas são inseridas na pilha, desde que o índice dessa posição seja zero. Pois uma vez que a posição foi acessada ela não pode ser visitada novamente e seu índice se torna um.
+Caso isso aconteça, o código passa para a próxima direção, de acordo com a ordem de preferência estabelecida e continua o caminhamento por ela. Todas as coordenadas (x,y) percorridas são inseridas na pilha, desde que o índice dessa posição seja zero. Pois uma vez que a posição foi acessada ela não pode ser visitada novamente e seu índice se torna um.</p>
 
 
-Para descobrir se o algoritmo está preso por obstáculos ou cercado de posições já visitadas, é verificado se a pilha aumentou de tamanho toda vez que se verificou as 8 possibilidades de caminhamento. Se o tamanho aumentar significa que a busca em profundidade contínua, caso não, significa que não existe nenhuma possibilidade de caminhamento para a posição atual, então é necessário desempilhar as posições até encontrar uma que seja possível de percorrer para algum lado.
+<p align="justify">
+Para descobrir se o algoritmo está preso por obstáculos ou cercado de posições já visitadas, é verificado se a pilha aumentou de tamanho toda vez que se verificou as 8 possibilidades de caminhamento. Se o tamanho aumentar significa que a busca em profundidade contínua, caso não, significa que não existe nenhuma possibilidade de caminhamento para a posição atual, então é necessário desempilhar as posições até encontrar uma que seja possível de percorrer para algum lado.</p>
 
 
+<p align="justify">
 O desempilhamento ocorre da seguinte forma: Faz-se o acesso ao topo da pilha que é a posição atual e a remove. Consequentemente, o algoritmo volta para a posição anterior e verifica se existe alguma direção a partir dela em que ele possa continuar sua busca em profundidade. O desempilhamento é feito até encontrar uma nova coordenação possível.
+</p>
 
 
-Cada direção de caminhamento possui uma função própria que verifica se a posição que se deseja ir extrapola os limites da matriz, se é parede (#), perigo (*), se o índice é igual a 1 ou se é um caminho livre.
+<p align="justify">
+Cada direção de caminhamento possui uma função própria que verifica se a posição que se deseja ir extrapola os limites da matriz, se é parede (#), perigo (*), se o índice é igual a 1 ou se é um caminho livre.</p>
 
 
+<p align="justify">
 Para todas as vezes que se encontra perigo (*) e retorna a posição matriz[0][0] todos os elementos da pilha são removidos e ela se torna vazia para iniciar um novo percurso.
 Função reiniciar_indices2 Responsável por reinicializar todos os índices da matriz[x][y].indice como zero novamente, já que o percurso irá começar de novo.
 </p>
@@ -348,13 +354,16 @@ Função reiniciar_indices2 Responsável por reinicializar todos os índices da 
 
 
 <p align="justify">
-  O projeto apresentado abordou três métodos de busca, sendo eles o randômica, busca em largura e profundidade. Cada um deles possui suas especificidades e foi perceptível que cada um se encaixa melhor para certos tipos de problemas.<br>
+  O projeto apresentado abordou três métodos de busca, sendo eles o randômica, busca em largura e profundidade. Cada um deles possui suas especificidades e foi perceptível que cada um se encaixa melhor para certos tipos de problemas.<br></p>
 
+<p align="justify">
   Em termos de análise assintótica, não é possível calcular o custo de um algoritmo randômico devido a natureza aleatória de suas decisões que são independentes umas das outras. No entanto, o algoritmo pode percorrer todo o espaço de busca antes de alcançar o objetivo, resultando em um custo de tempo exponencial, que seria o pior cenário. Além disso, em média, o tempo de execução pode ser menor dependendo da distribuição de probabilidade do espaço de busca e da posição do resultado item procurado.<br>
   A busca em largura explora o raio dos vizinhos de posição da matriz que se encontra no momento.
   Ela garante que o elemento procurado seja encontrado mais rápido, mas pode consumir muita memória e tempo de execução em espaços de busca muito grandes, e principalmente se o item buscado estiver no final da estrutura analisada.<br>
-  A busca em profundidade explora direções específicas o mais fundo possível. Ela é mais eficiente em espaços de busca com muitas ramificações e menos profundos. No entanto, pode ficar presa em ciclos infinitos ou caminhos de busca extensos, desperdiçando tempo explorando áreas irrelevantes.<br>
+  A busca em profundidade explora direções específicas o mais fundo possível. Ela é mais eficiente em espaços de busca com muitas ramificações e menos profundos. No entanto, pode ficar presa em ciclos infinitos ou caminhos de busca extensos, desperdiçando tempo explorando áreas irrelevantes.<br></p>
 
+
+<p align="justify">
   Com base no projeto apresentado e nas regras estabelecidas, em geral e considerando o caso médio de custo computacional, podemos fazer as seguintes observações: quando há muitos perigos (*),  o método de busca em largura se apresenta como pior algoritmo a ser implementado, enquanto a busca em profundidade se mostra muito mais eficiente. Por outro lado, na presença de muitos obstáculos (#), o método de busca em largura é mais rápido e mais adequado do que a busca em profundidade. Para todos os casos estudados, é observado que tanto o método de busca em largura quanto o método de busca em profundidade são mais eficazes do que o método randomico para este trabalho específico.
 </p>
 
