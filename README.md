@@ -241,9 +241,9 @@ Função reiniciar_indices2 Responsável por reinicializar todos os índices da 
 
 <p align="justify">
   <ul>
-    <li><b>Caso 1:</b> utilizanado a primeira matriz (padrão).</li>
-    <li><b>Caso 2:</b> utilizanado a segunda matriz (com mais perigos).</li>
-    <li><b>Caso 3:</b> utilizanado a terceira matriz (com mais parede).</li>
+    <li><b>Caso 1:</b> utilizando a primeira matriz (padrão).</li>
+    <li><b>Caso 2:</b> utilizando a segunda matriz (com mais perigos).</li>
+    <li><b>Caso 3:</b> utilizando a terceira matriz (com mais parede).</li>
   </ul>
 </p>
 
