@@ -1,5 +1,4 @@
 # AEDS: Labirinto por Profundidade (DFS) e Largura (BFS)
-oi 
 
 <p align="justify">
 A pedido do professor de Algoritmos e Estruturas de Dados do CEFET - Divinópolis, foi feito um algoritmo em C++, que executa 3 modos distintos de caminhamento em uma matriz de tamanho N. Sendo eles de um de forma randômica, outro por largura e o último por profundidade.
