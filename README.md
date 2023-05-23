@@ -160,7 +160,7 @@ Primeiramente faz a leitura da matriz no input.data. Apartir da posição (x,y) 
 
 
 <p align="justify">
-A busca por profundidade ou busca DFS (Depht-fisrt search) é um processo sistemático (algoritmo) usado para percorrer os vértices e arestas de um grafo. Neste projeto a busca será realizada por uma matriz ao invés de um grafo. O método consiste em escolher uma direção e continuar o caminho somente nela, caminhando o mais profundo possível , o algoritmo avança o máximo possível em um ramo da estrutura antes de ir para a próxima.
+A busca por profundidade ou busca DFS (Depht-fisrt search) é um processo sistemático (algoritmo) usado para percorrer os vértices e arestas de um grafo. Neste projeto a busca será realizada por uma matriz ao invés de um grafo. O método consiste em escolher uma direção e continuar o caminho somente nela, caminhando o mais profundo possível, o algoritmo avança o máximo possível em um ramo da estrutura antes de ir para a próxima.
 </p>
 
 
@@ -182,7 +182,6 @@ A busca por profundidade ou busca DFS (Depht-fisrt search) é um processo sistem
 
 - 0 caminho não descoberto.<br/>
 - 1 Posições vizinhas daquela coordenada já foram armazenadas.<br/>
-- 2 Coordenada já percorrida e também já verificado seus vizinhos.<br/>
 
 
 <p align="justify">Para este método foi usada a implementação de uma Pilha, a qual os elementos são sempre inseridos no início e tirados dele também. Há uma variável intitulada tam_pilha declaradada na classe Pilha, que conta a quantidade de elementos que ela possui. Além disso, existem funções para manipulação da pilha, são elas: </p>
@@ -199,7 +198,7 @@ Caso isso aconteça, o código passa para a próxima direção, de acordo com a 
 
 
 <p align="justify">
-Para descobrir se o algoritmo está preso por obstáculos ou cercado de posições já visitadas, é verificado se a pilha aumentou de tamanho toda vez que se verificou as 8 possibilidades de caminhamento. Se o tamanho aumentar significa que a busca em profundidade contínua, caso não, significa que não existe nenhuma possibilidade de caminhamento para a posição atual, então é necessário desempilhar as posições até encontrar uma que seja possível de percorrer para algum lado.</p>
+Para descobrir se o algoritmo está preso por obstáculos ou cercado de posições já visitadas, é verificado se a pilha aumentou de tamanho toda vez que se verificou as 8 possibilidades de caminhamento. Se o tamanho aumentar significa que a busca em profundidade continua, caso não, significa que não existe nenhuma possibilidade de caminhamento para a posição atual, então é necessário desempilhar as posições até encontrar uma que seja possível de percorrer para algum lado.</p>
 
 
 <p align="justify">
@@ -224,22 +223,19 @@ Ordem de preferência das direções de caminhamento:<br>
 </ol>
 </p>
 
-
 <p align="justify">
 Para todas as vezes que se encontra perigo (*) e retorna a posição matriz[0][0] todos os elementos da pilha são removidos e ela se torna vazia para iniciar um novo percurso.
-Função reiniciar_indices2 Responsável por reinicializar todos os índices da matriz[x][y].indice como zero novamente, já que o percurso irá começar de novo.
 </p>
-
 
 ## Funções
 
 
 <p align="justify">
 
-  * `void tamanho_e_quantidade(int *tamanho, int *quantidade)`: ler o tamanho da matriz presente no arquivo input.data;
-  * `void leitura_arquivo2(string **matriz)`: faz a leitura do arquivo gerando uma matriz para ser processada;
-  * `funcao_switch(...)`: Aciona atráves dos cases as direções de caminhamento. `direita_2(..)`, `void diagonal_direita_abaixo_2(...)`, `void baixo_2(...)`,
-  * `diagonal_esquerda_abaixo_2`, `void esquerda_2(..)`, `diagonal_esquerda_acima_2`, `void cima'_2(...)`,  `void diagonal_direita_acima_2(...)`, 
+  * `void tamanho_e_quantidade(int *tamanho, int *quantidade)`: Para ler o tamanho da matriz presente no arquivo input.data;
+  * `void leitura_arquivo2(string **matriz)`: Realiza a leitura do arquivo gerando uma matriz para ser processada;
+  * `funcao_switch(...)`: Aciona atráves dos cases as direções de caminhamento as respectivas funções: `direita_2(..)`, `void diagonal_direita_abaixo_2(...)`, `void baixo_2(...)`,
+   `diagonal_esquerda_abaixo_2`, `void esquerda_2(..)`, `diagonal_esquerda_acima_2`, `void cima'_2(...)`,  `void diagonal_direita_acima_2(...)`, 
   * `caminhar_profundidade(...)`: Função principal do método. Chama as funções de caminhar, verificações e validações da posição. É executada até atingir o objetivo do algoritmo. 
   * `reiniciar_indices2(...)`: Modifica todos os índices para zero novamente.
   * `reiniciando_perigo(...)`: Ao encontrar perigo *, o algoritmo retorna a posição[0][0] e realiza todos os procedimentos para reiniciar o percurso mais uma vez.
