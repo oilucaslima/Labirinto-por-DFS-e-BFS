@@ -250,9 +250,9 @@ Para todas as vezes que se encontra perigo (*) e retorna a posição matriz[0][0
 
 <p align="justify">
   <ul>
-    <li><b>Caso 1:</b> utilizando a primeira matriz (padrão).</li>
-    <li><b>Caso 2:</b> utilizando a segunda matriz (com mais perigos).</li>
-    <li><b>Caso 3:</b> utilizando a terceira matriz (com mais parede).</li>
+    <li><b>Caso 1:</b> Utilizando a primeira matriz (padrão).</li>
+    <li><b>Caso 2:</b> Utilizando a segunda matriz (com mais perigos).</li>
+    <li><b>Caso 3:</b> Utilizando a terceira matriz (com mais parede).</li>
   </ul>
 </p>
 
@@ -373,7 +373,7 @@ Para todas as vezes que se encontra perigo (*) e retorna a posição matriz[0][0
 
 
 <p align="justify">
-  Com base no projeto apresentado e nas regras estabelecidas, em geral e considerando o caso médio de custo computacional, podemos fazer as seguintes observações: quando há muitos perigos (*),  o método de busca em largura se apresenta como pior algoritmo a ser implementado, enquanto a busca em profundidade se mostra muito mais eficiente. Por outro lado, na presença de muitos obstáculos (#), o método de busca em largura é mais rápido e mais adequado do que a busca em profundidade. Para todos os casos estudados, é observado que tanto o método de busca em largura quanto o método de busca em profundidade são mais eficazes do que o método randomico para este trabalho específico.
+  Com base no projeto apresentado e nas regras estabelecidas, em geral e considerando o caso médio de custo computacional, podemos fazer as seguintes observações: quando há muitos perigos (*),  o método de busca em largura se apresenta como pior algoritmo a ser implementado, enquanto a busca em profundidade se mostra muito mais eficiente. Por outro lado, na presença de muitos obstáculos (#), o método de busca em largura é mais rápido e mais adequado do que a busca em profundidade. Para todos os casos estudados, é observado que o método de busca em largura ou o método de busca em profundidade, e em alguns casos os dois, são mais eficazes do que o método randomico para este trabalho apresentado.
 </p>
 
 
