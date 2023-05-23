@@ -209,6 +209,20 @@ O desempilhamento ocorre da seguinte forma: Faz-se o acesso ao topo da pilha que
 
 <p align="justify">
 Cada direção de caminhamento possui uma função própria que verifica se a posição que se deseja ir extrapola os limites da matriz, se é parede (#), perigo (*), se o índice é igual a 1 ou se é um caminho livre.</p>
+ 
+<p align="justify">
+Ordem de preferência das direções de caminhamento:<br>
+ <ol>
+  <li>Direita</li>
+  <li>Diagonal Direita Abaixo</li>
+  <li>Baixo</li>
+  <li>Diagonal Esquerda Abaixo</li>
+  <li>Esquerda</li>
+  <li>Diagonal Esquerda Acima</li>
+  <li>Cima</li>
+  <li>Diagonal Direita Acima</li>
+</ol>
+</p>
 
 
 <p align="justify">
