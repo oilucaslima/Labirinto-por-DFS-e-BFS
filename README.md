@@ -234,7 +234,7 @@ Para todas as vezes que se encontra perigo (*) e retorna a posição matriz[0][0
 
   * `void tamanho_e_quantidade(int *tamanho, int *quantidade)`: Para ler o tamanho da matriz presente no arquivo input.data;
   * `void leitura_arquivo2(string **matriz)`: Realiza a leitura do arquivo gerando uma matriz para ser processada;
-  * `funcao_switch(...)`: Aciona atráves dos cases as direções de caminhamento as respectivas funções: `direita_2(..)`, `void diagonal_direita_abaixo_2(...)`, `void baixo_2(...)`,
+  * `funcao_switch(...)`: Aciona atráves dos cases as direções de caminhamento e as respectivas funções: `direita_2(..)`, `void diagonal_direita_abaixo_2(...)`, `void baixo_2(...)`,
    `diagonal_esquerda_abaixo_2`, `void esquerda_2(..)`, `diagonal_esquerda_acima_2`, `void cima'_2(...)`,  `void diagonal_direita_acima_2(...)`, 
   * `caminhar_profundidade(...)`: Função principal do método. Chama as funções de caminhar, verificações e validações da posição. É executada até atingir o objetivo do algoritmo. 
   * `reiniciar_indices2(...)`: Modifica todos os índices para zero novamente.
