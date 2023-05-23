@@ -94,9 +94,14 @@ O caminhamento é feito de forma aleatória nesse algoritmo, ou seja, a partir d
 
 <p align="justify">Cada número sorteador representa uma posição que será percorrida: </p>
 
-&nbsp; &nbsp; <b>1-</b> Diagonal esquerda acima; &nbsp; <b>2-</b> Acima; &nbsp; <b>3-</b> Diagonal direita acima;<br>
-&nbsp; &nbsp; <b>4-</b> Esquerda; &nbsp; <b>5-</b> Direita;<br>
-&nbsp; &nbsp; <b>6-</b> Diagonal esquerda abaixo; &nbsp; <b>7-</b> Abaixo; &nbsp; <b>8-</b> Diagonal direita abaixo;<br>
+&nbsp; &nbsp; <b>1-</b> Diagonal esquerda acima; <br>
+&nbsp; &nbsp; <b>2-</b> Acima; <br>
+&nbsp; &nbsp; <b>3-</b> Diagonal direita acima;<br>
+&nbsp; &nbsp; <b>4-</b> Esquerda; <br>
+&nbsp; &nbsp; <b>5-</b> Direita;<br>
+&nbsp; &nbsp; <b>6-</b> Diagonal esquerda abaixo; <br>
+&nbsp; &nbsp; <b>7-</b> Abaixo; &nbsp; <br>
+&nbsp; &nbsp; <b>8-</b> Diagonal direita abaixo;<br>
 
 <p align="justify">Uma vez encontrada uma posição válida, o algoritmo realiza o caminhamento e verifica se é um perigo '*' ou uma parada '?'. Se for um perigo, a posição atual é alterada para '1' e o processo é reiniciado a partir da posição (0, 0). No entanto, se for uma parada, o programa é finalizado. Além disso, se a posição atual for '1', um novo sorteio é realizado.</p>
 
